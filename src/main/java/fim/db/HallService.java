@@ -1,8 +1,9 @@
 package fim.db;
 
 
-import cz.uhk.fim.model.Hall;
-import cz.uhk.fim.model.Ticket;
+
+import fim.model.Hall;
+import fim.model.Ticket;
 
 import java.util.List;
 

@@ -1,9 +1,10 @@
 package fim.db.impl;
 
-import cz.uhk.fim.db.HallRepository;
-import cz.uhk.fim.db.HallService;
-import cz.uhk.fim.model.Hall;
-import cz.uhk.fim.model.Ticket;
+
+import fim.db.HallRepository;
+import fim.db.HallService;
+import fim.model.Hall;
+import fim.model.Ticket;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

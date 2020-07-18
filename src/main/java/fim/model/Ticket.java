@@ -4,7 +4,7 @@ package fim.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "TICKET", schema = "bakzahraja1")
+@Table(name = "TICKET")
 public class Ticket {
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)

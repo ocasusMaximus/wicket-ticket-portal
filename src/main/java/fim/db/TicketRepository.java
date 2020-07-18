@@ -1,6 +1,7 @@
 package fim.db;
 
-import cz.uhk.fim.model.Ticket;
+
+import fim.model.Ticket;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

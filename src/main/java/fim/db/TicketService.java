@@ -2,10 +2,13 @@ package fim.db;
 
 
 
-import cz.uhk.fim.model.Ticket;
+
+
+import fim.model.Ticket;
 
 import java.util.Date;
 import java.util.List;
+
 
 public interface TicketService {
 

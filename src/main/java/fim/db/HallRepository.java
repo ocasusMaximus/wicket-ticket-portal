@@ -1,6 +1,7 @@
 package fim.db;
 
-import cz.uhk.fim.model.Hall;
+
+import fim.model.Hall;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

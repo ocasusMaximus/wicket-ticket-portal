@@ -3,7 +3,7 @@ package fim.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "HALL", schema = "bakzahraja1")
+@Table(name = "HALL")
 public class Hall {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
