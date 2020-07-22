@@ -30,12 +30,10 @@
         </div>
     </div>
 </nav>
-
-
 <div class="row justify-content-center">
-    <form  action="@{/createTicket}" object="${ticket}" method="post">
+    <form  action="@{/updateTicket/{id}(id=${ticket.getId()})}" object="${ticket}" method="post">
         <div class="row justify-content-center">
-            <h1>Nová rezervace</h1>
+            <h1>Úprava rezervace</h1>
         </div>
         <label>Film: </label>
         <select class="custom-select custom-select-sm mb-3" field="*{movie}">
@@ -66,8 +64,10 @@
 
         </div>
     </form>
-
 </div>
+
+
+
 <div>
     <table class="table-list">
         <thead>
