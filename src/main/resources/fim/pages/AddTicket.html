@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html wicket:extend xmlns:wicket="http://wicket.apache.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Apache Wicket</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" th:href="@{/css/springstyle.css}"/>
+    <wicket:link><link rel="stylesheet" type="text/css" href="../../static/css/wicketstyle.css"></wicket:link>
+    <wicket:link><link rel="icon" type="image/svg" href="../../static/images/wicket-logo.svg"/></wicket:link>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg py-3 shadow-sm">
     <div class="container">
         <a href="/" class="navbar-brand">
             <!-- Logo Image -->
-            <img src="../static/images/icon-spring-framework.svg" th:src="@{images/icon-spring-framework.svg}"
-                 width="100" height="40" alt="">
-            <span class="text-uppercase font-weight-bold">Spring Framework</span>
+            <wicket:link><img src="../../static/images/wicket-logo.svg"
+                 width="100" height="40" alt=""></wicket:link>
+            <span class="text-uppercase font-weight-bold">Apache Wicket</span>
         </a>
 
         <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -32,35 +33,36 @@
 
 
 <div class="row justify-content-center">
-    <form action="#" th:action="@{/createTicket}" th:object="${ticket}" method="post">
+    <form  action="@{/createTicket}" object="${ticket}" method="post">
         <div class="row justify-content-center">
             <h1>Nová rezervace</h1>
         </div>
-        <select class="custom-select custom-select-sm mb-3" th:field="*{movie}">
+        <label>Film: </label>
+        <select class="custom-select custom-select-sm mb-3" field="*{movie}">
             <option value="Star Wars: Pomsta Sithů">Star Wars: Pomsta Sithů</option>
             <option value="Avengers Endgame">Avengers Endgame</option>
             <option value="Pulp Fiction">Pulp Fiction</option>
             <option value="John Wick">John Wick</option>
         </select>
-
-        <select class="custom-select custom-select-sm mb-3" th:field="*{language}">
+        <label>Jazyk: </label>
+        <select class="custom-select custom-select-sm mb-3" field="*{language}">
             <option value="Angličtina">Angličtina</option>
             <option value="Čeština">Čeština</option>
         </select>
-
-        <select class="custom-select custom-select-sm mb-3" th:field="*{hall}">
+        <label>Sál: </label>
+        <select class="custom-select custom-select-sm mb-3" field="*{hall}">
             <option value="J2">J2</option>
             <option value="J3">J3</option>
         </select>
-
-        <input class="form-control form-control-sm" min="1" required th:field="*{numberOfSeats}"
+        <label>Počet míst: </label>
+        <input class="form-control form-control-sm" min="1" required field="*{numberOfSeats}"
                type="number">
 
         <div class="row justify-content-center">
-            <input type="submit" class="button_a" value="Odeslat"/>
+            <input type="submit" class="button_b" value="Odeslat"/>
         </div>
         <div class="row justify-content-center">
-            <input type="reset" class="button_a" value="Reset"/>
+            <input type="reset" class="button_b" value="Reset"/>
 
         </div>
     </form>
@@ -69,35 +71,36 @@
 
 
 <div class="row justify-content-center">
-    <form action="#" th:action="@{/updateTicket/{id}(id=${ticket.getId()})}" th:object="${ticket}" method="post">
+    <form  action="@{/updateTicket/{id}(id=${ticket.getId()})}" object="${ticket}" method="post">
         <div class="row justify-content-center">
             <h1>Úprava rezervace</h1>
         </div>
-        <select class="custom-select custom-select-sm mb-3" th:field="*{movie}">
+        <label>Film: </label>
+        <select class="custom-select custom-select-sm mb-3" field="*{movie}">
             <option value="Star Wars: Pomsta Sithů">Star Wars: Pomsta Sithů</option>
             <option value="Avengers Endgame">Avengers Endgame</option>
             <option value="Pulp Fiction">Pulp Fiction</option>
             <option value="John Wick">John Wick</option>
         </select>
-
-        <select class="custom-select custom-select-sm mb-3" th:field="*{language}">
+        <label>Jazyk: </label>
+        <select class="custom-select custom-select-sm mb-3" field="*{language}">
             <option value="Angličtina">Angličtina</option>
             <option value="Čeština">Čeština</option>
         </select>
-
-        <select class="custom-select custom-select-sm mb-3" th:field="*{hall}">
+        <label>Sál: </label>
+        <select class="custom-select custom-select-sm mb-3" field="*{hall}">
             <option value="J2">J2</option>
             <option value="J3">J3</option>
         </select>
-
-        <input class="form-control form-control-sm" min="1" required th:field="*{numberOfSeats}"
+        <label>Počet míst: </label>
+        <input class="form-control form-control-sm" min="1" required field="*{numberOfSeats}"
                type="number">
 
         <div class="row justify-content-center">
-            <input type="submit" class="button_a" value="Odeslat"/>
+            <input type="submit" class="button_b" value="Odeslat"/>
         </div>
         <div class="row justify-content-center">
-            <input type="reset" class="button_a" value="Reset"/>
+            <input type="reset" class="button_b" value="Reset"/>
 
         </div>
     </form>
@@ -113,10 +116,10 @@
         </thead>
         <tbody>
 
-        <tr th:action="@{/addTicket}" th:each=" hall: ${halls}">
+        <tr action="@{/addTicket}" each=" hall: ${halls}">
 
-            <td><span class="ticketProps" th:text="${hall.getName()}"> Sál </span></td>
-            <td><span class="ticketProps" th:text="${hall.getCapacity()}"> Kapacita </span></td>
+            <td><span class="ticketProps" text="${hall.getName()}"> Sál </span></td>
+            <td><span class="ticketProps" text="${hall.getCapacity()}"> Kapacita </span></td>
 
 
         </tr>
