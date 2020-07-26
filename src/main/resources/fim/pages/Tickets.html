@@ -53,27 +53,27 @@
     <!--  <tr th:if="${tickets.empty}">
          <td colspan="3">Nebyly nalezeny žádné záznamy.</td>
      </tr> -->
-     <tr wicket:each=" ticket : ${tickets}">
+     <tr wicket:id="listTickets">
 
-         <td><span class="ticketProps" wicket:text="${ticket.getMovie()}"> Název </span></td>
-         <td><span class="ticketProps"wicket:text="${ticket.getLanguage()}"> Jazyk </span></td>
-         <td><span class="ticketProps" wicket:text="${ticket.getNumberOfSeats()}"> Počet míst </span></td>
-         <td><span class="ticketProps" wicket:text="${ticket.getHall()}"> Sál </span></td>
-         <form method="post" wicket:action="@{/deleteTicket}" wicket:object="${ticket}">
+         <td><span class="ticketProps" wicket:id="movie"> Název </span></td>
+         <td><span class="ticketProps"wicket:id="language"> Jazyk </span></td>
+         <td><span class="ticketProps" wicket:id="numberOfSeats"> Počet míst </span></td>
+         <td><span class="ticketProps" wicket:id="hall"> Sál </span></td>
+         <form  wicket:id="deleteTicket" method="post">
              <input name="id" wicket:value="${ticket.getId()}" type="hidden"/>
              <input name="movie" wicket:value="${ticket.getMovie()}" type="hidden">
              <input name="language" wicket:value="${ticket.getLanguage()}" type="hidden">
              <input name="numberOfSeats" wicket:value="${ticket.getNumberOfSeats()}" type="hidden">
              <input name="hall" wicket:value="${ticket.getHall()}" type="hidden">
-             <td ><button type="submit" class="button_a" >Smazat</button></td>
+             <td ><button  class="button_a" >Smazat</button></td>
          </form>
 
-         <form wicket:action="@{/editTicket}" wicket:object="${ticket}">
+         <form wicket:id="editTicket">
              <input name="id" wicket:value="${ticket.getId()}" type="hidden"/>
              <input name="movie" wicket:value="${ticket.getMovie()}" type="hidden">
              <input name="language" wicket:value="${ticket.getLanguage()}" type="hidden">
              <input name="hall" wicket:value="${ticket.getHall()}" type="hidden">
-             <td ><button class="button_a" >Změnit</button></td>
+             <td ><button  type="submit" class="button_a" >Změnit</button></td>
          </form>
 
      </tr>
@@ -82,7 +82,7 @@
  </table>
 </div>
 <div id="deleteAllButton" >
-    <form method="post" wicket:action="@{/deleteAllTickets}">
+    <form method="post" wicket:id="deleteAllTickets">
     <button class="button_a" type="submit">Smazat Vse</button>
     </form>
 </div>

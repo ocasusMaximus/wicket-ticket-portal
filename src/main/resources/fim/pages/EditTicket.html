@@ -76,10 +76,10 @@
         </thead>
         <tbody>
 
-        <tr action="@{/addTicket}" each=" hall: ${halls}">
+        <tr wicket:id="listhalls">
 
-            <td><span class="ticketProps" text="${hall.getName()}"> Sál </span></td>
-            <td><span class="ticketProps" text="${hall.getCapacity()}"> Kapacita </span></td>
+            <td><span class="ticketProps" wicket:id="hallName"> Sál </span></td>
+            <td><span class="ticketProps"  wicket:id="hallCapacity"> Kapacita </span></td>
 
 
         </tr>

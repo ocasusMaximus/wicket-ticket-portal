@@ -121,7 +121,7 @@ span {
     color: #fff !important;
     text-transform: uppercase;
     text-decoration: none;
-    background:  #eb891a;
+    background: #eb891a;
     padding: 10px;
     border-radius: 5px;
     display: inline-block;
@@ -140,18 +140,19 @@ span {
     box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
     transition: all 0.4s ease 0s;
 }
+
 .button_b {
     color: #fff !important;
     text-transform: uppercase;
     text-decoration: none;
-    background:  #eb891a;
+    background: #eb891a;
     padding: 10px;
     border-radius: 5px;
     display: inline-block;
     border: none;
     transition: all 0.4s ease 0s;
     margin-bottom: 5px;
-    width:50%
+    width: 50%
 
 }
 
@@ -163,7 +164,6 @@ span {
     box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
     transition: all 0.4s ease 0s;
 }
-
 
 
 .row {

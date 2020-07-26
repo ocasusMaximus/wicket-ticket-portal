@@ -2,10 +2,11 @@ package fim.model;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "TICKET")
-public class Ticket {
+public class Ticket implements Serializable {
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
