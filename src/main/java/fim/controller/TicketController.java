@@ -9,6 +9,7 @@ import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.springframework.ui.Model;
 
 import org.wicketstuff.rest.annotations.MethodMapping;
+import org.wicketstuff.rest.annotations.ResourcePath;
 import org.wicketstuff.rest.contenthandling.IWebSerialDeserial;
 import org.wicketstuff.rest.resource.AbstractRestResource;
 
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.function.Supplier;
 
-
+@ResourcePath("/ticketController")
 public class TicketController extends AbstractRestResource<IWebSerialDeserial>{
 
 

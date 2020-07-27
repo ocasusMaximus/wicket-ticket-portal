@@ -30,18 +30,8 @@ public class ApplicationConfiguration extends WebApplication implements WicketAp
 
         new AnnotatedMountScanner().scanPackage("fim.pages").mount(this);
 
-        webApplication.mountResource("/ticketController", new ResourceReference("restReference") {
-           TicketController resource = new TicketController();
-
-            @Override
-            public IResource getResource() {
-                return resource;
-            }
-
-        });
-
-
         PackageScanner.scanPackage("fim.controller");
+
     }
 
     @Override
