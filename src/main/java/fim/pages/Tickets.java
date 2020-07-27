@@ -16,9 +16,11 @@ import org.apache.wicket.markup.repeater.data.DataView;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.omg.CORBA.Any;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.wicketstuff.annotation.mount.MountPath;
 
 
 @WicketHomePage
+@MountPath("")
 public class Tickets extends WebPage {
 
     @SpringBean

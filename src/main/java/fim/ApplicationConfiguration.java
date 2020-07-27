@@ -3,25 +3,49 @@ package fim;
 
 import com.giffing.wicket.spring.boot.context.extensions.ApplicationInitExtension;
 import com.giffing.wicket.spring.boot.context.extensions.WicketApplicationInitConfiguration;
+import fim.controller.TicketController;
 import fim.pages.AddTicket;
 import fim.pages.EditTicket;
 import fim.pages.Error;
 import fim.pages.Tickets;
+
+import org.apache.wicket.Page;
 import org.apache.wicket.protocol.http.WebApplication;
+import org.apache.wicket.request.resource.IResource;
+import org.apache.wicket.request.resource.ResourceReference;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.wicketstuff.annotation.scan.AnnotatedMountScanner;
+import org.wicketstuff.rest.utils.mounting.PackageScanner;
 
 @ApplicationInitExtension
 @Configuration
 @ComponentScan("fim.db")
-public class ApplicationConfiguration implements WicketApplicationInitConfiguration {
+public class ApplicationConfiguration extends WebApplication implements WicketApplicationInitConfiguration {
 
     @Override
     public void init(WebApplication webApplication) {
+
         // your custom configuration
-        webApplication.mountPage("/", Tickets.class);
-        webApplication.mountPage("addTicket", AddTicket.class);
-        webApplication.mountPage("error", Error.class);
-        webApplication.mountPage("editTicket", EditTicket.class);
+
+        new AnnotatedMountScanner().scanPackage("fim.pages").mount(this);
+
+        webApplication.mountResource("/ticketController", new ResourceReference("restReference") {
+           TicketController resource = new TicketController();
+
+            @Override
+            public IResource getResource() {
+                return resource;
+            }
+
+        });
+
+
+        PackageScanner.scanPackage("fim.controller");
+    }
+
+    @Override
+    public Class<? extends Page> getHomePage() {
+        return null;
     }
 }

@@ -13,8 +13,9 @@ import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.markup.repeater.data.DataView;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.omg.CORBA.Any;
+import org.wicketstuff.annotation.mount.MountPath;
 
-
+@MountPath("/addTicket")
 public class AddTicket extends WebPage {
 
     @SpringBean
@@ -32,7 +33,7 @@ public class AddTicket extends WebPage {
             }
         };
 
-        addTicketForm.add(new Select<>("numberOfSeats",));
+//        addTicketForm.add(new Select<>("numberOfSeats",));
         add(addTicketForm);
 
 
