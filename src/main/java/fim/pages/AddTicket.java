@@ -21,6 +21,7 @@ public class AddTicket extends WebPage {
     @SpringBean
     private HallService hallService;
 
+
     // jeste prekreslovani pomoci webmarkup containeru jako v test viewer
     public AddTicket() {
         Form<Ticket> addTicketForm = new Form<Ticket>("addTicketForm") {
