@@ -85,7 +85,7 @@ public class AddTicket extends WebPage  {
 
 
         Select movie = new Select("movie",  new PropertyModel<String>(this, "movieSelect"));
-        movie.add(new SelectOption<String>("SW",  new Model("Star Wars: Pomsta Sithů")));
+        movie.add(new SelectOption<String>("SW",  new Model<String>("Star Wars: Pomsta Sithů")));
         movie.add(new SelectOption<String>("AE", new Model<String>("Avengers: Endgame")));
         movie.add(new SelectOption<String>("PP", new Model<String>("Pulp Fiction")));
         movie.add(new SelectOption<String>("JW", new Model<String>("John Wick")));
