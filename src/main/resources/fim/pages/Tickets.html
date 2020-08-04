@@ -1,7 +1,9 @@
+
 <!DOCTYPE html>
 <html wicket:extend xmlns:wicket="http://wicket.apache.org">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Apache Wicket</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -27,18 +29,7 @@
         </div>
     </div>
 </nav>
-<!--
-<nav class="navigation">
-    <ul>
-        <li>
-        <a href="#">
-            <img   src="../static/images/icon-spring-framework.svg" th:src="@{images/icon-spring-framework.svg}" width="100" height="40" alt="">
-        </a></li>
-        <li><a href="/">Seznam rezervací</a></li>
-        <li><a href="/ticket">Nová rezervace</a></li>
-    </ul>
-</nav>
--->
+
 <div>
 <table class="table-list">
     <thead>
@@ -50,29 +41,24 @@
     <th>Změna</th>
     </thead>
     <tbody>
-    <!--  <tr th:if="${tickets.empty}">
-         <td colspan="3">Nebyly nalezeny žádné záznamy.</td>
-     </tr> -->
+
      <tr wicket:id="listTickets">
 
          <td><span class="ticketProps" wicket:id="movie"> Název </span></td>
-         <td><span class="ticketProps"wicket:id="language"> Jazyk </span></td>
+         <td><span class="ticketProps" wicket:id="language"> Jazyk </span></td>
          <td><span class="ticketProps" wicket:id="numberOfSeats"> Počet míst </span></td>
          <td><span class="ticketProps" wicket:id="hall"> Sál </span></td>
-         <form  wicket:id="deleteTicket" method="post">
+         <form  wicket:id="deleteTicket" >
              <input name="id" wicket:value="${ticket.getId()}" type="hidden"/>
-             <input name="movie" wicket:value="${ticket.getMovie()}" type="hidden">
-             <input name="language" wicket:value="${ticket.getLanguage()}" type="hidden">
-             <input name="numberOfSeats" wicket:value="${ticket.getNumberOfSeats()}" type="hidden">
-             <input name="hall" wicket:value="${ticket.getHall()}" type="hidden">
              <td ><button  class="button_a" >Smazat</button></td>
          </form>
 
          <form wicket:id="editTicket">
              <input name="id" wicket:value="${ticket.getId()}" type="hidden"/>
-             <input name="movie" wicket:value="${ticket.getMovie()}" type="hidden">
-             <input name="language" wicket:value="${ticket.getLanguage()}" type="hidden">
-             <input name="hall" wicket:value="${ticket.getHall()}" type="hidden">
+<!--             <input name="movie" wicket:id="movie" type="hidden">-->
+<!--             <input name="language" wicket:id="language" type="hidden">-->
+<!--             <input name="numberOfSeats" wicket:id="numberOfSeats" type="hidden">-->
+<!--             <input name="hall" wicket:id="hall" type="hidden">-->
              <td ><button  type="submit" class="button_a" >Změnit</button></td>
          </form>
 

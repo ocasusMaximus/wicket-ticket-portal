@@ -22,9 +22,11 @@ dependencies {
     implementation 'org.hsqldb:hsqldb:2.5.1'
     implementation 'org.wicketstuff:wicketstuff-annotation:8.0.0'
     implementation 'org.wicketstuff:wicketstuff-restannotations:8.0.0'
-    implementation 'org.objenesis:objenesis:3.1'
-//    // https://mvnrepository.com/artifact/org.objenesis/objenesis
-//    testCompile group: 'org.objenesis', name: 'objenesis', version: '3.1'
+    implementation 'org.apache.wicket:wicket-extensions:8.6.1'
+
+
+
+
 
 
 

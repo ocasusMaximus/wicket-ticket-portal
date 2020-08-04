@@ -31,29 +31,30 @@
     </div>
 </nav>
 <div class="row justify-content-center">
-    <form  action="@{/updateTicket/{id}(id=${ticket.getId()})}" object="${ticket}" method="post">
+    <form  wicket:id="editTicketForm">
         <div class="row justify-content-center">
             <h1>Úprava rezervace</h1>
         </div>
-        <label>Film: </label>
-        <select class="custom-select custom-select-sm mb-3" field="*{movie}">
-            <option value="Star Wars: Pomsta Sithů">Star Wars: Pomsta Sithů</option>
-            <option value="Avengers Endgame">Avengers Endgame</option>
-            <option value="Pulp Fiction">Pulp Fiction</option>
-            <option value="John Wick">John Wick</option>
+
+        <select wicket:id="movie" class="custom-select custom-select-sm mb-3">
+            <option wicket:id="SW" >Star Wars: Pomsta Sithů</option>
+            <option wicket:id="AE" >Avengers Endgame</option>
+            <option wicket:id="PP" >Pulp Fiction</option>
+            <option  wicket:id="JW" >John Wick</option>
+
         </select>
         <label>Jazyk: </label>
-        <select class="custom-select custom-select-sm mb-3" field="*{language}">
-            <option value="Angličtina">Angličtina</option>
-            <option value="Čeština">Čeština</option>
+        <select wicket:id="language" class="custom-select custom-select-sm mb-3">
+            <option wicket:id="AJ" >Angličtina</option>
+            <option wicket:id="CJ" >Čeština</option>
         </select>
         <label>Sál: </label>
-        <select class="custom-select custom-select-sm mb-3" field="*{hall}">
-            <option value="J2">J2</option>
-            <option value="J3">J3</option>
+        <select wicket:id="hall" class="custom-select custom-select-sm mb-3">
+            <option wicket:id="J2">J2</option>
+            <option wicket:id="J3" >J3</option>
         </select>
         <label>Počet míst: </label>
-        <input class="form-control form-control-sm" min="1" required field="*{numberOfSeats}"
+        <input wicket:id="numberOfSeats" class="form-control form-control-sm" min="1" required
                type="number">
 
         <div class="row justify-content-center">

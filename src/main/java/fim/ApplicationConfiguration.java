@@ -22,7 +22,9 @@ public class ApplicationConfiguration extends WebApplication implements WicketAp
     public void init(WebApplication webApplication) {
 
         // your custom configuration
-        //tady nemusi nic z toho byt protoze je to vsechno build in v tom wicketspringboot
+
+        webApplication.getMarkupSettings().setDefaultMarkupEncoding("UTF-8");
+        webApplication.getRequestCycleSettings().setResponseRequestEncoding("UTF-8");
 
 
     }
