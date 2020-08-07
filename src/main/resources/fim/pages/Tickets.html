@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html wicket:extend xmlns:wicket="http://wicket.apache.org">
 <head>
@@ -6,9 +5,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Apache Wicket</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <wicket:link><link rel="stylesheet" type="text/css" href="../../static/css/wicketstyle.css"></wicket:link>
-    <wicket:link><link rel="icon" type="image/svg" href="../../static/images/wicket-logo.svg"/></wicket:link>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <wicket:link>
+        <link rel="stylesheet" type="text/css" href="../../static/css/wicketstyle.css">
+    </wicket:link>
+    <wicket:link>
+        <link rel="icon" type="image/svg" href="../../static/images/wicket-logo.svg"/>
+    </wicket:link>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg py-3 shadow-sm">
@@ -19,7 +23,9 @@
             <span class="text-uppercase font-weight-bold">Apache Wicket</span>
         </a>
 
-        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
+        <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler"><span class="navbar-toggler-icon"></span></button>
 
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
@@ -31,47 +37,44 @@
 </nav>
 
 <div>
-<table class="table-list">
-    <thead>
-    <th>Název</th>
-    <th>Jazyk</th>
-    <th>Počet míst</th>
-    <th>Sál</th>
-    <th>Smazání</th>
-    <th>Změna</th>
-    </thead>
-    <tbody>
+    <table class="table-list">
+        <thead>
+        <th>Název</th>
+        <th>Jazyk</th>
+        <th>Počet míst</th>
+        <th>Sál</th>
+        <th>Smazání</th>
+        <th>Změna</th>
+        </thead>
+        <tbody>
 
-     <tr wicket:id="listTickets">
+        <tr wicket:id="listTickets">
 
-         <td><span class="ticketProps" wicket:id="movie"> Název </span></td>
-         <td><span class="ticketProps" wicket:id="language"> Jazyk </span></td>
-         <td><span class="ticketProps" wicket:id="numberOfSeats"> Počet míst </span></td>
-         <td><span class="ticketProps" wicket:id="hall"> Sál </span></td>
-         <form  wicket:id="deleteTicket" >
-             <input name="id" wicket:value="${ticket.getId()}" type="hidden"/>
-             <td ><button  class="button_a" >Smazat</button></td>
-         </form>
+            <td><span class="ticketProps" wicket:id="movie"> Název </span></td>
+            <td><span class="ticketProps" wicket:id="language"> Jazyk </span></td>
+            <td><span class="ticketProps" wicket:id="numberOfSeats"> Počet míst </span></td>
+            <td><span class="ticketProps" wicket:id="hall"> Sál </span></td>
+            <form wicket:id="deleteTicket">
+                <td>
+                    <button class="button_a">Smazat</button>
+                </td>
+            </form>
 
-         <form wicket:id="editTicket">
-             <input name="id" wicket:value="${ticket.getId()}" type="hidden"/>
-<!--             <input name="movie" wicket:id="movie" type="hidden">-->
-<!--             <input name="language" wicket:id="language" type="hidden">-->
-<!--             <input name="numberOfSeats" wicket:id="numberOfSeats" type="hidden">-->
-<!--             <input name="hall" wicket:id="hall" type="hidden">-->
-             <td ><button  type="submit" class="button_a" >Změnit</button></td>
-         </form>
+            <form wicket:id="editTicket">
+                <td>
+                    <button type="submit" class="button_a">Změnit</button>
+                </td>
+            </form>
 
-     </tr>
-     </tbody>
-  <!--  <td colspan="1" class="form-buttons"><input type="submit" value="Smazat Vse"/></td>-->
- </table>
+        </tr>
+        </tbody>
+    </table>
 </div>
-<div id="deleteAllButton" >
+<div id="deleteAllButton">
     <form method="post" wicket:id="deleteAllTickets">
-    <button class="button_a" type="submit">Smazat Vse</button>
+        <button class="button_a" type="submit">Smazat Vse</button>
     </form>
 </div>
 
- </body>
+</body>
 </html>

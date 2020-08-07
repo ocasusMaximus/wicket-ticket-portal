@@ -5,16 +5,19 @@
     <title>Apache Wicket</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <wicket:link><link rel="stylesheet" type="text/css" href="../../static/css/wicketstyle.css"></wicket:link>
-    <wicket:link><link rel="icon" type="image/svg" href="../../static/images/wicket-logo.svg"/></wicket:link>
+    <wicket:link>
+        <link rel="stylesheet" type="text/css" href="../../static/css/wicketstyle.css">
+    </wicket:link>
+    <wicket:link>
+        <link rel="icon" type="image/svg" href="../../static/images/wicket-logo.svg"/>
+    </wicket:link>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg py-3 shadow-sm">
     <div class="container">
         <a href="/" class="navbar-brand">
-            <!-- Logo Image -->
             <wicket:link><img src="../../static/images/wicket-logo.svg"
-                 width="100" height="40" alt=""></wicket:link>
+                              width="100" height="40" alt=""></wicket:link>
             <span class="text-uppercase font-weight-bold">Apache Wicket</span>
         </a>
 
@@ -31,27 +34,27 @@
     </div>
 </nav>
 <div class="row justify-content-center">
-    <form  wicket:id="editTicketForm">
+    <form wicket:id="editTicketForm">
         <div class="row justify-content-center">
             <h1>Úprava rezervace</h1>
         </div>
 
         <select wicket:id="movie" class="custom-select custom-select-sm mb-3">
-            <option wicket:id="SW" >Star Wars: Pomsta Sithů</option>
-            <option wicket:id="AE" >Avengers Endgame</option>
-            <option wicket:id="PP" >Pulp Fiction</option>
-            <option  wicket:id="JW" >John Wick</option>
+            <option wicket:id="SW">Star Wars: Pomsta Sithů</option>
+            <option wicket:id="AE">Avengers Endgame</option>
+            <option wicket:id="PP">Pulp Fiction</option>
+            <option wicket:id="JW">John Wick</option>
 
         </select>
         <label>Jazyk: </label>
         <select wicket:id="language" class="custom-select custom-select-sm mb-3">
-            <option wicket:id="AJ" >Angličtina</option>
-            <option wicket:id="CJ" >Čeština</option>
+            <option wicket:id="AJ">Angličtina</option>
+            <option wicket:id="CJ">Čeština</option>
         </select>
         <label>Sál: </label>
         <select wicket:id="hall" class="custom-select custom-select-sm mb-3">
             <option wicket:id="J2">J2</option>
-            <option wicket:id="J3" >J3</option>
+            <option wicket:id="J3">J3</option>
         </select>
         <label>Počet míst: </label>
         <input wicket:id="numberOfSeats" class="form-control form-control-sm" min="1" required
@@ -68,7 +71,6 @@
 </div>
 
 
-
 <div>
     <table class="table-list">
         <thead>
@@ -80,7 +82,7 @@
         <tr wicket:id="listhalls">
 
             <td><span class="ticketProps" wicket:id="hallName"> Sál </span></td>
-            <td><span class="ticketProps"  wicket:id="hallCapacity"> Kapacita </span></td>
+            <td><span class="ticketProps" wicket:id="hallCapacity"> Kapacita </span></td>
 
 
         </tr>

@@ -13,8 +13,7 @@ public class Hall implements Serializable {
     private int capacity;
 
 
-
-    public Hall(){
+    public Hall() {
 
     }
 
@@ -27,6 +26,7 @@ public class Hall implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
+
     @Basic
     @Column(name = "NAME")
     public String getName() {
@@ -36,6 +36,7 @@ public class Hall implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
     @Basic
     @Column(name = "CAPACITY")
     public int getCapacity() {

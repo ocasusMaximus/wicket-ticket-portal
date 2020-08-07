@@ -1,7 +1,6 @@
 package fim.db;
 
 
-
 import fim.model.Hall;
 import fim.model.Ticket;
 

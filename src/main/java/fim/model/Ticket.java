@@ -7,8 +7,8 @@ import java.io.Serializable;
 @Entity
 @Table(name = "TICKET")
 public class Ticket implements Serializable {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String movie;
     private String language;
@@ -16,10 +16,10 @@ public class Ticket implements Serializable {
     private String hall;
 
 
-
-    public Ticket(){
+    public Ticket() {
 
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Basic

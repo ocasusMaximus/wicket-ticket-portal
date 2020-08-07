@@ -13,7 +13,7 @@ public class HallDataProvider implements IDataProvider<Hall> {
     private List<Hall> halls;
 
     public HallDataProvider(List<Hall> halls) {
-    this.halls = halls;
+        this.halls = halls;
     }
 
     @Override

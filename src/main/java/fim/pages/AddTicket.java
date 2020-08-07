@@ -1,6 +1,5 @@
 package fim.pages;
 
-import com.giffing.wicket.spring.boot.context.scan.WicketHomePage;
 import fim.config.HallDataProvider;
 import fim.db.HallService;
 import fim.db.TicketService;
@@ -10,28 +9,21 @@ import org.apache.wicket.Session;
 import org.apache.wicket.extensions.markup.html.form.select.SelectOption;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.NumberTextField;
-import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.markup.repeater.data.DataView;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
-import org.apache.wicket.util.crypt.StringUtils;
-import org.omg.CORBA.Any;
 import org.wicketstuff.annotation.mount.MountPath;
 import org.apache.wicket.extensions.markup.html.form.select.Select;
 
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.CharsetEncoder;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
+
 import java.util.Locale;
 
 @MountPath("/addTicket")
-public class AddTicket extends WebPage  {
+public class AddTicket extends WebPage {
 
     @SpringBean
     private HallService hallService;
@@ -43,7 +35,6 @@ public class AddTicket extends WebPage  {
     private String hallSelect = "J2";
     private int numberOfSeatsSelect = 0;
 
-    // jeste prekreslovani pomoci webmarkup containeru jako v test viewer
     public AddTicket() {
 
         Session.get().setLocale(new Locale("cs"));
@@ -76,10 +67,8 @@ public class AddTicket extends WebPage  {
         };
 
 
-
-
-        Select movie = new Select("movie",  new PropertyModel<String>(this, "movieSelect"));
-        movie.add(new SelectOption<String>("SW",  new Model<String>("Star Wars: Pomsta Sithů")));
+        Select movie = new Select("movie", new PropertyModel<String>(this, "movieSelect"));
+        movie.add(new SelectOption<String>("SW", new Model<String>("Star Wars: Pomsta Sithů")));
         movie.add(new SelectOption<String>("AE", new Model<String>("Avengers: Endgame")));
         movie.add(new SelectOption<String>("PP", new Model<String>("Pulp Fiction")));
         movie.add(new SelectOption<String>("JW", new Model<String>("John Wick")));
@@ -88,24 +77,22 @@ public class AddTicket extends WebPage  {
         add(addTicketForm);
 
 
-        Select language = new Select("language",  new PropertyModel<String>(this, "languageSelect"));
+        Select language = new Select("language", new PropertyModel<String>(this, "languageSelect"));
 
         addTicketForm.add(language);
 
-        language.add(new SelectOption<String>("AJ",  new Model<String>("Angličtina")));
-        language.add(new SelectOption<String>("CJ",  new Model<String>("Čeština")));
+        language.add(new SelectOption<String>("AJ", new Model<String>("Angličtina")));
+        language.add(new SelectOption<String>("CJ", new Model<String>("Čeština")));
 
-        Select hall = new Select("hall",  new PropertyModel<String>(this, "hallSelect"));
+        Select hall = new Select("hall", new PropertyModel<String>(this, "hallSelect"));
 
         addTicketForm.add(hall);
 
-        hall.add(new SelectOption<String>("J2",  new Model<String>("J2")));
-        hall.add(new SelectOption<String>("J3",  new Model<String>("J3")));
+        hall.add(new SelectOption<String>("J2", new Model<String>("J2")));
+        hall.add(new SelectOption<String>("J3", new Model<String>("J3")));
 
-        NumberTextField<Integer> numberOfSeats = new NumberTextField<Integer>("numberOfSeats",  new PropertyModel<Integer>(this, "numberOfSeatsSelect") );
+        NumberTextField<Integer> numberOfSeats = new NumberTextField<Integer>("numberOfSeats", new PropertyModel<Integer>(this, "numberOfSeatsSelect"));
         addTicketForm.add(numberOfSeats);
-
-
 
 
         DataView<Hall> dataView = new DataView<Hall>("listhalls", new HallDataProvider(hallService.loadAllHalls())) {

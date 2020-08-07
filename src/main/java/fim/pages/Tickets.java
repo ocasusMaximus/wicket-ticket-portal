@@ -1,7 +1,6 @@
 package fim.pages;
 
 import com.giffing.wicket.spring.boot.context.scan.WicketHomePage;
-import fim.config.HallDataProvider;
 import fim.config.TicketDataProvider;
 import fim.db.HallService;
 import fim.db.TicketService;
@@ -10,13 +9,11 @@ import fim.model.Ticket;
 import org.apache.wicket.Session;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.markup.repeater.data.DataView;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.omg.CORBA.Any;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.wicketstuff.annotation.mount.MountPath;
 
 import java.util.Locale;
@@ -88,7 +85,6 @@ public class Tickets extends WebPage {
         add(deleteAllForm);
 
     }
-
 
 
 }

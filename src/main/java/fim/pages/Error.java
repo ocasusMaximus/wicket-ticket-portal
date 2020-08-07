@@ -6,9 +6,8 @@ import org.apache.wicket.markup.html.form.Form;
 import org.omg.CORBA.Any;
 
 
-//@MountPath("/error")
 public class Error extends WebPage {
-    public Error(){
+    public Error() {
 
         Form<Any> form = new Form<Any>("goback") {
 

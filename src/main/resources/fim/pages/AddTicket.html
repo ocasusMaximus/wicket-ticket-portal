@@ -18,7 +18,6 @@
 <nav class="navbar navbar-expand-lg py-3 shadow-sm">
     <div class="container">
         <a href="/" class="navbar-brand">
-            <!-- Logo Image -->
             <wicket:link><img src="../../static/images/wicket-logo.svg"
                               width="100" height="40" alt=""></wicket:link>
             <span class="text-uppercase font-weight-bold">Apache Wicket</span>
@@ -41,9 +40,6 @@
 <div class="row justify-content-center">
 
 
-
-
-
     <form wicket:id="addTicketForm">
         <div class="row justify-content-center">
             <h1>Nová rezervace</h1>
@@ -51,21 +47,21 @@
         <label>Film: </label>
 
         <select wicket:id="movie" class="custom-select custom-select-sm mb-3">
-                <option wicket:id="SW" >Star Wars: Pomsta Sithů</option>
-                <option wicket:id="AE" >Avengers Endgame</option>
-                <option wicket:id="PP" >Pulp Fiction</option>
-                <option  wicket:id="JW" >John Wick</option>
+            <option wicket:id="SW">Star Wars: Pomsta Sithů</option>
+            <option wicket:id="AE">Avengers Endgame</option>
+            <option wicket:id="PP">Pulp Fiction</option>
+            <option wicket:id="JW">John Wick</option>
 
         </select>
         <label>Jazyk: </label>
         <select wicket:id="language" class="custom-select custom-select-sm mb-3">
-            <option wicket:id="AJ" >Angličtina</option>
-            <option wicket:id="CJ" >Čeština</option>
+            <option wicket:id="AJ">Angličtina</option>
+            <option wicket:id="CJ">Čeština</option>
         </select>
         <label>Sál: </label>
         <select wicket:id="hall" class="custom-select custom-select-sm mb-3">
             <option wicket:id="J2">J2</option>
-            <option wicket:id="J3" >J3</option>
+            <option wicket:id="J3">J3</option>
         </select>
         <label>Počet míst: </label>
         <input wicket:id="numberOfSeats" class="form-control form-control-sm" min="1" required

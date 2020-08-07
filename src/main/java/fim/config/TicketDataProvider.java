@@ -14,7 +14,7 @@ public class TicketDataProvider implements IDataProvider<Ticket> {
     private List<Ticket> tickets;
 
     public TicketDataProvider(List<Ticket> tickets) {
-    this.tickets = tickets;
+        this.tickets = tickets;
     }
 
     @Override

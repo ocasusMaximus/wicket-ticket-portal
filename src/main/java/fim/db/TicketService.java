@@ -1,9 +1,6 @@
 package fim.db;
 
 
-
-
-
 import fim.model.Ticket;
 
 import java.util.Date;

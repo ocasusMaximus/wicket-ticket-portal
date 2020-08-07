@@ -16,9 +16,8 @@ import org.apache.wicket.markup.repeater.data.DataView;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
-import org.wicketstuff.annotation.mount.MountPath;
 
-//@MountPath("/editTicket")
+
 public class EditTicket extends WebPage {
 
     @SpringBean
@@ -32,8 +31,7 @@ public class EditTicket extends WebPage {
     private int numberOfSeatsSelect = 0;
 
 
-
-    public EditTicket(int id)  {
+    public EditTicket(int id) {
 
         Form<Ticket> editTicketForm = new Form<Ticket>("editTicketForm") {
 
@@ -57,9 +55,9 @@ public class EditTicket extends WebPage {
                 Hall updatedHall = hallService.loadHallById(idOfHall);
 
                 int capacity;
-                if (oldHall.getId() != updatedHall.getId()){
+                if (oldHall.getId() != updatedHall.getId()) {
                     capacity = updatedHall.getCapacity();
-                } else{
+                } else {
                     capacity = oldHall.getCapacity() + oldTicketNoS;
                 }
 
@@ -77,7 +75,7 @@ public class EditTicket extends WebPage {
                     updatedHall.setCapacity(capacity - ticket.getNumberOfSeats());
                     hallService.createHall(updatedHall);
                     setResponsePage(Tickets.class);
-                } else{
+                } else {
                     setResponsePage(Error.class);
                 }
 
@@ -85,8 +83,8 @@ public class EditTicket extends WebPage {
         };
 
 
-        Select movie = new Select("movie",  new PropertyModel<String>(this, "movieSelect"));
-        movie.add(new SelectOption<String>("SW",  new Model("Star Wars: Pomsta Sithů")));
+        Select movie = new Select("movie", new PropertyModel<String>(this, "movieSelect"));
+        movie.add(new SelectOption<String>("SW", new Model("Star Wars: Pomsta Sithů")));
         movie.add(new SelectOption<String>("AE", new Model<String>("Avengers: Endgame")));
         movie.add(new SelectOption<String>("PP", new Model<String>("Pulp Fiction")));
         movie.add(new SelectOption<String>("JW", new Model<String>("John Wick")));
@@ -95,34 +93,22 @@ public class EditTicket extends WebPage {
         add(editTicketForm);
 
 
-        Select language = new Select("language",  new PropertyModel<String>(this, "languageSelect"));
+        Select language = new Select("language", new PropertyModel<String>(this, "languageSelect"));
 
         editTicketForm.add(language);
 
-        language.add(new SelectOption<String>("AJ",  new Model<String>("Angličtina")));
-        language.add(new SelectOption<String>("CJ",  new Model<String>("Čeština")));
+        language.add(new SelectOption<String>("AJ", new Model<String>("Angličtina")));
+        language.add(new SelectOption<String>("CJ", new Model<String>("Čeština")));
 
-        Select hall = new Select("hall",  new PropertyModel<String>(this, "hallSelect"));
+        Select hall = new Select("hall", new PropertyModel<String>(this, "hallSelect"));
 
         editTicketForm.add(hall);
 
-        hall.add(new SelectOption<String>("J2",  new Model<String>("J2")));
-        hall.add(new SelectOption<String>("J3",  new Model<String>("J3")));
+        hall.add(new SelectOption<String>("J2", new Model<String>("J2")));
+        hall.add(new SelectOption<String>("J3", new Model<String>("J3")));
 
-        NumberTextField<Integer> numberOfSeats = new NumberTextField<Integer>("numberOfSeats",  new PropertyModel<Integer>(this, "numberOfSeatsSelect") );
+        NumberTextField<Integer> numberOfSeats = new NumberTextField<Integer>("numberOfSeats", new PropertyModel<Integer>(this, "numberOfSeatsSelect"));
         editTicketForm.add(numberOfSeats);
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         DataView<Hall> dataView = new DataView<Hall>("listhalls", new HallDataProvider(hallService.loadAllHalls())) {

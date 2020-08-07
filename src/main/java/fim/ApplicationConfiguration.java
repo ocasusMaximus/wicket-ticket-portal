@@ -22,10 +22,10 @@ public class ApplicationConfiguration extends WebApplication implements WicketAp
 
     @SpringBean
     private HallService hallService;
+
     @Override
     public void init(WebApplication webApplication) {
 
-        // your custom configuration
 
         webApplication.getMarkupSettings().setDefaultMarkupEncoding("UTF-8");
         webApplication.getRequestCycleSettings().setResponseRequestEncoding("UTF-8");
@@ -36,7 +36,7 @@ public class ApplicationConfiguration extends WebApplication implements WicketAp
     }
 
     private void initHalls() {
-        if(hallService.loadAllHalls().size() == 0) {
+        if (hallService.loadAllHalls().size() == 0) {
             Hall j2 = new Hall();
             j2.setId(1);
             j2.setCapacity(100);
