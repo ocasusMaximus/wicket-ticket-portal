@@ -37,7 +37,7 @@ public class Tickets extends WebPage {
 
     public Tickets() {
 
-        Session.get().setLocale(new Locale("cz"));
+        Session.get().setLocale(new Locale("cs"));
 
         DataView<Ticket> dataView = new DataView<Ticket>("listTickets", new TicketDataProvider(ticketService.loadAllTickets())) {
             @Override

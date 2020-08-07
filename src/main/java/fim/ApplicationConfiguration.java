@@ -14,12 +14,6 @@ import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.wicketstuff.annotation.scan.AnnotatedMountScanner;
-import org.wicketstuff.rest.utils.mounting.PackageScanner;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 
 @ApplicationInitExtension
 @Configuration

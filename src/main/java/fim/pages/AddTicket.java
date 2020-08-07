@@ -46,7 +46,7 @@ public class AddTicket extends WebPage  {
     // jeste prekreslovani pomoci webmarkup containeru jako v test viewer
     public AddTicket() {
 
-
+        Session.get().setLocale(new Locale("cs"));
 
         Form<Ticket> addTicketForm = new Form<Ticket>("addTicketForm") {
 
@@ -75,12 +75,6 @@ public class AddTicket extends WebPage  {
             }
         };
 
-
-//         movieSelect = new String(String.valueOf((StandardCharsets.UTF_8.encode(movieSelect))));
-//        String test = "Čo je to";
-//        System.out.println(test);
-////        StandardCharsets.UTF_8.encode(movieSelect).
-//        System.out.println(String.valueOf(StandardCharsets.UTF_8.encode(movieSelect)));
 
 
 
