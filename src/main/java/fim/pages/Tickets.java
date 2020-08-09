@@ -78,6 +78,15 @@ public class Tickets extends WebPage {
 
             @Override
             protected void onSubmit() {
+                for (Ticket ticket : ticketService.loadAllTickets()) {
+
+                    int tickNoS = ticket.getNumberOfSeats();
+                    int idOfHall = hallService.getIdOfHall(ticket);
+                    Hall updatedHall = hallService.loadHallById(idOfHall);
+                    int capacity = updatedHall.getCapacity() + tickNoS;
+                    updatedHall.setCapacity(capacity);
+                    hallService.createHall(updatedHall);
+                }
                 ticketService.deleteAllTickets();
                 setResponsePage(Tickets.class);
             }
